@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    ports: ["5678:5678"]
+    volumes:
+      - ./workflow:/import
+    command: sh -c "n8n import:workflow --input=/import/dsn_hackathon_workflow.json && n8n start"
+  streamlit:
+    build: .
+    ports: ["8501:8501"]
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - n8n

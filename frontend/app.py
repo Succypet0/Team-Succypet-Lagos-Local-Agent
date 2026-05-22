@@ -16,7 +16,7 @@ with tab1:
         with st.spinner("Agent is reasoning..."):
             payload = {"persona": persona_a, "product_details": product}
             
-            response = requests.post("http://n8n:5678/webhook/test-a-simulate", json=payload)
+            response = requests.post("http://n8n:5678/webhook/test-a-simulate", json=payload, timeout=30)
             
             if response.status_code == 200:
                 data = response.json()
@@ -34,7 +34,7 @@ with tab2:
         with st.spinner("Analyzing constraints and ranking items..."):
             payload = {"persona": persona_b}
             
-            response = requests.post("http://n8n:5678/webhook/task-b-review", json=payload)
+            response = requests.post("http://n8n:5678/webhook/task-b-review", json=payload,timeout = 30)
             
             if response.status_code == 200:
                 data = response.json()
