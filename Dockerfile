@@ -8,7 +8,8 @@ WORKDIR /app
 COPY frontend/requirements.txt .
 
 # 4. Install the dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+# We add a 100-second timeout so it doesn't give up on slow connections
+RUN pip install --no-cache-dir --default-timeout=100 -r requirements.txt
 
 # 5. Copy the rest of the application code
 COPY frontend/app.py .
