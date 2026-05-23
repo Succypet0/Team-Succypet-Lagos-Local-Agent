@@ -55,9 +55,9 @@ Task B (Contextual Recommender Agent): Processes real-world data stores dynamica
 📊 Grounding Data Pipeline
 The intelligence of our agents is grounded in heavily curated datasets located in the /data folder:
 
-Task A Data: Lagos_Local_Agent_Balanced_Reviews.csv (1-5 star behavioral grounding).
+Task A Data: Reviews.csv (1-5 star behavioral grounding).
 
-Task B Data: Lagos_Local_Agent_Restaurants.csv (Verified restaurant database).
+Task B Data: Restaurants.csv (Verified restaurant database).
 
 📝 Core Submission Endpoints
 Task A (Review Simulator): /webhook/task-a-simulate
