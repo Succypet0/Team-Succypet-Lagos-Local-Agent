@@ -1,5 +1,5 @@
 {
-  "name": "dsn-hackathon-workflow",
+  "name": "dsn_hackathon_workflow",
   "nodes": [
     {
       "parameters": {
@@ -11,10 +11,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        0,
-        0
+        80,
+        96
       ],
-      "id": "57d014dd-0ffe-4347-810d-25994f730eb3",
+      "id": "55063644-364a-4ec9-a4cb-ed268804645d",
       "name": "simulate",
       "webhookId": "25ab161a-321b-4e54-b212-d18ccd1bd5cc"
     },
@@ -47,10 +47,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        208,
-        0
+        288,
+        96
       ],
-      "id": "097361ad-4230-4162-928e-b858488f459b",
+      "id": "21f3b442-e610-46a1-b80e-d6e76010fede",
       "name": "Edit Fields"
     },
     {
@@ -65,10 +65,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        416,
-        0
+        496,
+        96
       ],
-      "id": "85fb90a5-8422-4b78-9f07-84ad45051a19",
+      "id": "dc78d788-5a81-4ed6-ae3c-29b3931bf716",
       "name": "AI Agent"
     },
     {
@@ -78,10 +78,10 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        640,
-        176
+        720,
+        272
       ],
-      "id": "2238d716-504d-4e16-80d7-b0362940a8b5",
+      "id": "4e62fb02-bddf-4566-a2a6-699883a6a1e1",
       "name": "Structured Output Parser"
     },
     {
@@ -98,17 +98,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        288,
-        176
+        368,
+        272
       ],
-      "id": "d8d56aac-ef0c-4379-affe-ee5638b3d563",
-      "name": "OpenAI Chat Model",
-      "credentials": {
-        "openAiApi": {
-          "id": "OmFeIkTrP026lByu",
-          "name": "ijeoma's Token"
-        }
-      }
+      "id": "29658754-693d-4fb2-9d2d-9c97973e45ed",
+      "name": "OpenAI Chat Model"
     },
     {
       "parameters": {
@@ -119,10 +113,10 @@
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        768,
-        0
+        848,
+        96
       ],
-      "id": "eb6248f3-4961-40f0-a9f3-42c87729f156",
+      "id": "463b0292-ae36-4ab9-8f89-37abf7ffd2dc",
       "name": "Respond to Webhook"
     },
     {
@@ -133,11 +127,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -80,
-        -96
+        0,
+        0
       ],
       "typeVersion": 1,
-      "id": "ea686443-ba21-4fa4-accf-079fd093269c",
+      "id": "0a4f8547-9d5d-4824-9a79-8682b92d83ce",
       "name": "Sticky Note"
     },
     {
@@ -150,10 +144,10 @@
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 2.1,
       "position": [
-        -32,
-        480
+        48,
+        576
       ],
-      "id": "09d1a377-cf62-4dd8-b5e0-2c8ada086544",
+      "id": "a3a9f811-353a-45eb-9099-e3714b737fd5",
       "name": "Webhook",
       "webhookId": "69fdeb33-81c8-4209-b0ea-f1d42e39919f"
     },
@@ -180,10 +174,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        224,
-        480
+        304,
+        576
       ],
-      "id": "f0eb1bd1-7d2d-4ff1-8713-7c9263de8ca3",
+      "id": "46fb5e74-8f63-4491-8db2-eba18262d5da",
       "name": "Edit Fields1"
     },
     {
@@ -193,10 +187,10 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        608,
-        688
+        688,
+        784
       ],
-      "id": "0ad3432b-87ff-4645-b957-affeaa0ce482",
+      "id": "e2a06d5d-0ae2-4117-8d3b-9d8487fc37ab",
       "name": "Structured Output Parser1"
     },
     {
@@ -213,17 +207,11 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.3,
       "position": [
-        352,
-        672
+        432,
+        768
       ],
-      "id": "baf096af-a61e-4c88-8e3e-da1413fde8c2",
-      "name": "OpenAI Chat Model1",
-      "credentials": {
-        "openAiApi": {
-          "id": "OmFeIkTrP026lByu",
-          "name": "ijeoma's Token"
-        }
-      }
+      "id": "e068a679-9ab5-4ba7-9e0a-48e54fb9f8f4",
+      "name": "OpenAI Chat Model1"
     },
     {
       "parameters": {
@@ -254,10 +242,10 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        1200,
-        480
+        1280,
+        576
       ],
-      "id": "ce8a8e77-a907-4399-ac00-8393eb730787",
+      "id": "7a3d8eaf-d7db-4960-bb97-53fa03b8ad5c",
       "name": "Edit Fields2"
     },
     {
@@ -267,10 +255,10 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        1632,
-        688
+        1712,
+        784
       ],
-      "id": "f8fb4c3f-75ea-41f8-867f-698e0930197e",
+      "id": "b86bf551-c162-4db0-bbd3-e380f61c7b86",
       "name": "Structured Output Parser2"
     },
     {
@@ -285,10 +273,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        1392,
-        480
+        1472,
+        576
       ],
-      "id": "19a08182-923d-4186-877f-10efffb6b375",
+      "id": "ae063dd9-8ba1-4699-9331-aaa390522454",
       "name": "Recommendation agent"
     },
     {
@@ -303,25 +291,25 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        432,
-        480
+        512,
+        576
       ],
-      "id": "095c4e76-c677-4660-afb9-d5e42a45a3b3",
+      "id": "c8a15d7e-5158-4be1-908a-4a5f4d8ec976",
       "name": "Extract user qualities from persona"
     },
     {
       "parameters": {
         "respondWith": "json",
-        "responseBody": "={\n  \"recommended_item\":\"{{ $json.output.recommended_item }}\",\n  \"reasoning\": \"{{ $json.output.reasoning }}\"\n}",
+        "responseBody": "={\n  \"selected_item\":\"{{ $json.output.recommended_item }}\",\n  \"reasoning\": \"{{ $json.output.reasoning }}\"\n}",
         "options": {}
       },
       "type": "n8n-nodes-base.respondToWebhook",
       "typeVersion": 1.5,
       "position": [
-        1808,
-        480
+        1888,
+        576
       ],
-      "id": "8004674a-29bc-4de1-8d0a-8689d010d2ad",
+      "id": "86769ca1-4c37-4fd7-bad1-89a6928a6cd4",
       "name": "Respond to Webhook1"
     },
     {
@@ -332,11 +320,11 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -160,
-        336
+        -80,
+        432
       ],
       "typeVersion": 1,
-      "id": "d5372100-a25c-494f-9710-6d376bbf3fad",
+      "id": "bf7e52cd-0971-436e-8db9-a5fb7e5b3896",
       "name": "Sticky Note1"
     },
     {
@@ -344,10 +332,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolThink",
       "typeVersion": 1.1,
       "position": [
-        432,
-        176
+        512,
+        272
       ],
-      "id": "fd9e26db-9ee1-4302-b197-8f9acc3e14c0",
+      "id": "36b1d55c-b8fe-44b9-b9e5-d9b2b1980a22",
       "name": "Think"
     },
     {
@@ -355,19 +343,17 @@
         "operation": "get",
         "dataTableId": {
           "__rl": true,
-          "value": "70WKWroT4ebkZ529",
           "mode": "list",
-          "cachedResultName": "Local Agent reviews",
-          "cachedResultUrl": "/projects/SwT8tQMwxB4sfK57/datatables/70WKWroT4ebkZ529"
+          "value": ""
         }
       },
       "type": "n8n-nodes-base.dataTableTool",
       "typeVersion": 1.1,
       "position": [
-        528,
-        192
+        608,
+        288
       ],
-      "id": "00fc6f85-312b-4e7f-95a0-2a77ebf9ae6c",
+      "id": "fe98076a-81e3-4ff1-a5b4-6cfb080b225f",
       "name": "Review database"
     },
     {
@@ -377,10 +363,10 @@
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
       "position": [
-        1040,
-        688
+        1120,
+        784
       ],
-      "id": "134c44d2-3d72-4b31-9aa0-169e7fe71b06",
+      "id": "48137ec9-ff0c-44e9-b559-01ba60e6d5cc",
       "name": "Structured Output Parser3"
     },
     {
@@ -388,10 +374,10 @@
       "type": "@n8n/n8n-nodes-langchain.toolThink",
       "typeVersion": 1.1,
       "position": [
-        800,
-        704
+        880,
+        800
       ],
-      "id": "38261d96-53f0-4196-b886-ae2f9a1ba3a7",
+      "id": "8cacb560-95e6-499c-a2f9-71997ddf7eb2",
       "name": "Think1"
     },
     {
@@ -399,19 +385,17 @@
         "operation": "get",
         "dataTableId": {
           "__rl": true,
-          "value": "uVHAeqRuYxpApXK5",
           "mode": "list",
-          "cachedResultName": "Resturants",
-          "cachedResultUrl": "/projects/SwT8tQMwxB4sfK57/datatables/uVHAeqRuYxpApXK5"
+          "value": ""
         }
       },
       "type": "n8n-nodes-base.dataTableTool",
       "typeVersion": 1.1,
       "position": [
-        912,
-        704
+        992,
+        800
       ],
-      "id": "4731ab75-8175-45eb-9fa1-4374b1e94218",
+      "id": "ef9c7838-88e8-482d-8137-538e961dbeab",
       "name": "resturants"
     },
     {
@@ -426,10 +410,10 @@
       "type": "@n8n/n8n-nodes-langchain.agent",
       "typeVersion": 3.1,
       "position": [
-        816,
-        464
+        896,
+        560
       ],
-      "id": "c54c9ad8-215e-4621-8163-8766d5f36f49",
+      "id": "fd746b68-45de-42bb-a8e7-fb4e2120cf2a",
       "name": "Ranking Agent"
     }
   ],
@@ -655,16 +639,15 @@
       ]
     }
   },
-  "active": true,
+  "active": false,
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "12632d76-2748-4f4a-97d0-961dd98fac9e",
+  "versionId": "8e2aafdd-77fa-47c7-9d2d-15ea406f3386",
   "meta": {
-    "templateCredsSetupCompleted": true,
-    "instanceId": "d1220572b5f8ff1846b7ef3f860e1923eb995b46811ee581fe2f04fcfcb9ba8c"
+    "instanceId": "ce64d3eca6f1231d14f29aa3963e285e02fd79f0efeecf7482a2c877a6a0c93c"
   },
-  "id": "H0XhWwWvX9qcA7Gb",
+  "id": "CsBtxI7lYoIu4tig",
   "tags": []
 }

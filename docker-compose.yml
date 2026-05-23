@@ -1,15 +1,27 @@
-version: '3.8'
 services:
   n8n:
     image: docker.n8n.io/n8nio/n8n
-    ports: ["5678:5678"]
+    container_name: n8n
+    ports:
+      - "5678:5678"
     volumes:
       - ./workflow:/import
-    command: sh -c "n8n import:workflow --input=/import/dsn_hackathon_workflow.json && n8n start"
+      - ./data:/data
+    networks:
+      - agent-network
+
   streamlit:
     build: .
-    ports: ["8501:8501"]
+    container_name: streamlit
+    ports:
+      - "8501:8501"
     volumes:
       - ./data:/app/data
+    networks:
+      - agent-network
     depends_on:
       - n8n
+
+networks:
+  agent-network:
+    driver: bridge
