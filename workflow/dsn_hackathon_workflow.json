@@ -14,7 +14,7 @@
         80,
         96
       ],
-      "id": "55063644-364a-4ec9-a4cb-ed268804645d",
+      "id": "d4bc8ee2-8ea1-4183-a7fc-8bd6c3e05d9c",
       "name": "simulate",
       "webhookId": "25ab161a-321b-4e54-b212-d18ccd1bd5cc"
     },
@@ -50,7 +50,7 @@
         288,
         96
       ],
-      "id": "21f3b442-e610-46a1-b80e-d6e76010fede",
+      "id": "4d7075ed-6048-4487-8625-55e03330e7c3",
       "name": "Edit Fields"
     },
     {
@@ -68,7 +68,7 @@
         496,
         96
       ],
-      "id": "dc78d788-5a81-4ed6-ae3c-29b3931bf716",
+      "id": "bf6b1f26-cab1-4a4c-8ef1-0786d32f1828",
       "name": "AI Agent"
     },
     {
@@ -81,7 +81,7 @@
         720,
         272
       ],
-      "id": "4e62fb02-bddf-4566-a2a6-699883a6a1e1",
+      "id": "c315d8a3-efb8-454f-b739-2e7e25974fc5",
       "name": "Structured Output Parser"
     },
     {
@@ -101,8 +101,14 @@
         368,
         272
       ],
-      "id": "29658754-693d-4fb2-9d2d-9c97973e45ed",
-      "name": "OpenAI Chat Model"
+      "id": "4293ccc2-1331-4eeb-b093-824593b5c0bc",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "N98QLuXb5yBitadT",
+          "name": "OpenAI account"
+        }
+      }
     },
     {
       "parameters": {
@@ -116,14 +122,15 @@
         848,
         96
       ],
-      "id": "463b0292-ae36-4ab9-8f89-37abf7ffd2dc",
+      "id": "ef28f090-089a-44b3-a627-f5b838444436",
       "name": "Respond to Webhook"
     },
     {
       "parameters": {
-        "content": "## Task A\n**User Modelling** ",
+        "content": "## Task A\n**Behavioral Simulator**",
         "height": 400,
-        "width": 1024
+        "width": 1024,
+        "color": 7
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
@@ -131,7 +138,7 @@
         0
       ],
       "typeVersion": 1,
-      "id": "0a4f8547-9d5d-4824-9a79-8682b92d83ce",
+      "id": "64449b78-32c8-428d-8843-7a85d635c00d",
       "name": "Sticky Note"
     },
     {
@@ -147,7 +154,7 @@
         48,
         576
       ],
-      "id": "a3a9f811-353a-45eb-9099-e3714b737fd5",
+      "id": "0dabcdf7-22f1-4265-8187-50aaffdbf234",
       "name": "Webhook",
       "webhookId": "69fdeb33-81c8-4209-b0ea-f1d42e39919f"
     },
@@ -177,12 +184,12 @@
         304,
         576
       ],
-      "id": "46fb5e74-8f63-4491-8db2-eba18262d5da",
+      "id": "21ff881c-1a6d-4edc-b5c8-44d0ba22e07e",
       "name": "Edit Fields1"
     },
     {
       "parameters": {
-        "jsonSchemaExample": "{\n\"inferred_budget\": \"low/medium/high\",\n\"preferred_vibe\": \"[one word descriptor]\",\n\"primary_need\": \"[short phrase]\"\n}"
+        "jsonSchemaExample": "{\n\"inferred_budget\": \"low/medium/high\",\n\"preferred_vibe\": \"[one word descriptor]\",\n\"primary_need\": \"[short phrase]\",\n\"location\": \"[extracted location or 'Lagos']\"\n}"
       },
       "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
       "typeVersion": 1.3,
@@ -190,8 +197,9 @@
         688,
         784
       ],
-      "id": "e2a06d5d-0ae2-4117-8d3b-9d8487fc37ab",
-      "name": "Structured Output Parser1"
+      "id": "341356fe-431a-499b-8335-35cf9a181919",
+      "name": "Structured Output Parser1",
+      "retryOnFail": true
     },
     {
       "parameters": {
@@ -210,8 +218,14 @@
         432,
         768
       ],
-      "id": "e068a679-9ab5-4ba7-9e0a-48e54fb9f8f4",
-      "name": "OpenAI Chat Model1"
+      "id": "4d62f2ce-6644-4d77-9be6-204892dff415",
+      "name": "OpenAI Chat Model1",
+      "credentials": {
+        "openAiApi": {
+          "id": "N98QLuXb5yBitadT",
+          "name": "OpenAI account"
+        }
+      }
     },
     {
       "parameters": {
@@ -234,6 +248,12 @@
               "name": "item_vibe",
               "value": "={{ $json.output.reasoning }}",
               "type": "string"
+            },
+            {
+              "id": "323b5d62-817c-47e3-9215-ccea97c277a9",
+              "name": "match_score",
+              "value": "={{ $json.output.match_score }}",
+              "type": "string"
             }
           ]
         },
@@ -245,7 +265,7 @@
         1280,
         576
       ],
-      "id": "7a3d8eaf-d7db-4960-bb97-53fa03b8ad5c",
+      "id": "070a3c1b-45a9-42e9-809e-2a03e85e7330",
       "name": "Edit Fields2"
     },
     {
@@ -258,7 +278,7 @@
         1712,
         784
       ],
-      "id": "b86bf551-c162-4db0-bbd3-e380f61c7b86",
+      "id": "9ebf4dc3-b890-4961-b70b-05b2ffade6e3",
       "name": "Structured Output Parser2"
     },
     {
@@ -267,7 +287,7 @@
         "text": "=user persona : {{ $json.persona }}\nranked item: {{ $json.ranked_item }}\nitem vibe : {{ $json.item_vibe }}",
         "hasOutputParser": true,
         "options": {
-          "systemMessage": "You are a highly intelligent, relatable recommendation agent operating in Nigeria.\nYou have reasoned that the user should choose the provided 'ranked_item' based on their persona.\nWrite a 2-sentence recommendation explaining WHY this item perfectly fits their specific context. Use authentic, conversational Nigerian phrasing.\nOutput STRICTLY a JSON object. No conversational filler outside the JSON.\nFormat:\n{\n\"recommended_item\": \"[Item Name]\",\n\"reasoning\": \"[Your localized explanation]\"\n}"
+          "systemMessage": "=You are a highly intelligent, relatable recommendation agent operating in Nigeria.\nYou have reasoned that the user should choose the provided 'ranked_item' based on their persona.\nWrite a 2-sentence recommendation explaining WHY this item perfectly fits their specific context. Use authentic, conversational Nigerian phrasing.\nOutput STRICTLY a JSON object. No conversational filler outside the JSON.\nFormat:\n{\n\"recommended_item\": \"[Item Name]\",\n\"reasoning\": \"[Your localized explanation]\"\n}"
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -276,7 +296,7 @@
         1472,
         576
       ],
-      "id": "ae063dd9-8ba1-4699-9331-aaa390522454",
+      "id": "8ca5f8b5-f9ae-4bb7-b7da-3ce4ca12cff6",
       "name": "Recommendation agent"
     },
     {
@@ -285,7 +305,7 @@
         "text": "=persona: {{ $json.persona }}\n",
         "hasOutputParser": true,
         "options": {
-          "systemMessage": "You are a precise data extraction agent. Analyze the provided user persona and extract their core preferences into exact category parameters.\nOutput STRICTLY a JSON object with no conversational text.\nFormat:\n{\n\"inferred_budget\": \"low/medium/high\",\n\"preferred_vibe\": \"[one word descriptor]\",\n\"primary_need\": \"[short phrase]\"\n}"
+          "systemMessage": "=You are a precise data extraction agent. Analyze the provided user persona and extract their core preferences into exact category parameters.\nOutput STRICTLY a JSON object with no conversational text.\nFormat:\n{\n\"inferred_budget\": \"low/medium/high\",\n\"preferred_vibe\": \"[one word descriptor]\",\n\"primary_need\": \"[short phrase]\"\n}"
         }
       },
       "type": "@n8n/n8n-nodes-langchain.agent",
@@ -294,8 +314,9 @@
         512,
         576
       ],
-      "id": "c8a15d7e-5158-4be1-908a-4a5f4d8ec976",
-      "name": "Extract user qualities from persona"
+      "id": "fc8d9326-065e-4ae2-9dfd-1e765389f897",
+      "name": "Extract user qualities from persona",
+      "retryOnFail": true
     },
     {
       "parameters": {
@@ -309,14 +330,15 @@
         1888,
         576
       ],
-      "id": "86769ca1-4c37-4fd7-bad1-89a6928a6cd4",
+      "id": "e1827448-8cf3-4f56-9366-6bf494a7898d",
       "name": "Respond to Webhook1"
     },
     {
       "parameters": {
-        "content": "## Task B\n**Recommendation**",
+        "content": "## Task B\n**Contextual Recommendation**",
         "height": 496,
-        "width": 2144
+        "width": 2144,
+        "color": 7
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
@@ -324,7 +346,7 @@
         432
       ],
       "typeVersion": 1,
-      "id": "bf7e52cd-0971-436e-8db9-a5fb7e5b3896",
+      "id": "7684ec83-a9c4-498d-9c01-80a89c9e2f50",
       "name": "Sticky Note1"
     },
     {
@@ -335,7 +357,7 @@
         512,
         272
       ],
-      "id": "36b1d55c-b8fe-44b9-b9e5-d9b2b1980a22",
+      "id": "3c93254a-4db5-455c-9d22-87a5b4a2eabc",
       "name": "Think"
     },
     {
@@ -353,7 +375,7 @@
         608,
         288
       ],
-      "id": "fe98076a-81e3-4ff1-a5b4-6cfb080b225f",
+      "id": "3856dd71-6d48-4d1a-8202-3602d9b74d27",
       "name": "Review database"
     },
     {
@@ -366,7 +388,7 @@
         1120,
         784
       ],
-      "id": "48137ec9-ff0c-44e9-b559-01ba60e6d5cc",
+      "id": "52b8b840-f5ec-4ef2-85d0-a555916be8ef",
       "name": "Structured Output Parser3"
     },
     {
@@ -377,7 +399,7 @@
         880,
         800
       ],
-      "id": "8cacb560-95e6-499c-a2f9-71997ddf7eb2",
+      "id": "7f7f3341-0a52-46a5-b07d-894c13c42085",
       "name": "Think1"
     },
     {
@@ -395,7 +417,7 @@
         992,
         800
       ],
-      "id": "ef9c7838-88e8-482d-8137-538e961dbeab",
+      "id": "a61eeea8-abdb-4995-851d-467041449c73",
       "name": "resturants"
     },
     {
@@ -413,8 +435,56 @@
         896,
         560
       ],
-      "id": "fd746b68-45de-42bb-a8e7-fb4e2120cf2a",
+      "id": "bf698b4b-240c-482e-85b3-987d4efb1ce2",
       "name": "Ranking Agent"
+    },
+    {
+      "parameters": {
+        "content": "## Extract  user preferences \n* Location\n* Budget\n* Vibe\n* Needs",
+        "height": 496,
+        "width": 400,
+        "color": 4
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        416,
+        432
+      ],
+      "typeVersion": 1,
+      "id": "69ffc38e-b616-4f5f-ade7-6e7ec3b6580e",
+      "name": "Sticky Note2"
+    },
+    {
+      "parameters": {
+        "content": "## Rank available resturants\n* based off preference give the highest ranked and reasons\n",
+        "height": 496,
+        "width": 416,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        816,
+        432
+      ],
+      "typeVersion": 1,
+      "id": "18416ca4-19ee-4815-9c88-699682ecd8c8",
+      "name": "Sticky Note3"
+    },
+    {
+      "parameters": {
+        "content": "## Draft Recommedation \n*In Nigerian speech native*",
+        "height": 496,
+        "width": 384,
+        "color": 2
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        1424,
+        432
+      ],
+      "typeVersion": 1,
+      "id": "b02d03fc-6453-41f3-bc0b-4d27847822c9",
+      "name": "Sticky Note4"
     }
   ],
   "pinData": {},
@@ -639,15 +709,16 @@
       ]
     }
   },
-  "active": false,
+  "active": true,
   "settings": {
     "executionOrder": "v1",
     "binaryMode": "separate"
   },
-  "versionId": "8e2aafdd-77fa-47c7-9d2d-15ea406f3386",
+  "versionId": "8865b2c6-19ac-47f6-8ea9-a9dfdd41b305",
   "meta": {
-    "instanceId": "ce64d3eca6f1231d14f29aa3963e285e02fd79f0efeecf7482a2c877a6a0c93c"
+    "templateCredsSetupCompleted": true,
+    "instanceId": "975e0f7641fa0569c31d5a2d864cf335bcd90e7088238a9b9b12f05099cc7903"
   },
-  "id": "CsBtxI7lYoIu4tig",
+  "id": "A4PMWsesqLAje8pW",
   "tags": []
 }
