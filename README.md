@@ -59,7 +59,7 @@ Ensure the agent can read the local datasets:
 1. Open the **Data Table** nodes inside the imported n8n workflow.
 2. **Task A:** Set the read path to `/data/Reviews.csv`.
 3. **Task B:** Set the read path to `/data/Restaurants.csv`.
-4. Click **Save** and toggle the workflow to **Active** to register the webhooks.
+4. Click **Publish** and toggle the workflow to **Published** to register the webhooks.
 
 ### Development & Testing
 
@@ -155,7 +155,7 @@ This application is fully containerized for local evaluation. To deploy or test 
 To ensure a smooth evaluation process, please verify:
 
 * [x] Docker containers are running securely (`docker ps`).
-* [x] `dsn_hackathon_workflow.json` is imported and set to **Active**.
+* [x] `dsn_hackathon_workflow.json` is imported and set to **Published**.
 * [x] OpenAI API keys are saved in n8n.
 * [x] Data Table nodes point correctly to the `/data/...` directory.
 
